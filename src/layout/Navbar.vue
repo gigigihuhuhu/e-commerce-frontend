@@ -18,10 +18,10 @@
             <a class="nav-link active" href="/firstexample">Example</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="/secondexample">Example2</a>
+            <a class="nav-link active" href="/admin">관리자 Page</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="/thirdexample">Example3</a>
+            <a class="nav-link active" href="/customer">고객 Page</a>
           </li>
         </ul>
         <form class="d-flex">

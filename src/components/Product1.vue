@@ -3,15 +3,12 @@
     <div class="card">
       <div class="row g-0">
         <div class="col-md-4">
-          <img v-bind:src="getImgUrl(img)" class="rounded float-start" alt="...">
-          <!--          <a v-bind:href="imgsrc"> asas </a>-->
+          <img v-bind:src="getImgUrl(productInfo.imgFileName)" class="rounded float-start" alt="...">
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-              additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <h5 class="card-title">{{productInfo.name}}</h5>
+            <p class="card-text"><small class="text-muted">재고 수량 : {{productInfo.stackNumber}}개</small></p>
           </div>
         </div>
       </div>
@@ -22,9 +19,9 @@
 <script>
 export default {
   name: "Product1",
-  props: ['img'],
+  props: ['productInfo'],
   mounted() {
-    console.log('이미지 파일 이름 입니다.', this.img);
+    console.log('부모 컴포넌트 Product List 로 부터 전달 받은 상품 정보 : ', this.productInfo);
   },
   methods: {
     getImgUrl(productImgName) {

@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import HelloWorld from '@/components/HelloWorld';
 import FirstExample from '@/components/FirstExample';
 import ShortenURL from '@/components/ShortenURL';
+import ProductList from '@/components/ProductList';
 
 import Navbar from '@/layout/Navbar';
 import Footer from '@/layout/Footer';
@@ -36,10 +37,18 @@ export default new Router({
       },
     },
     {
-      path: '/admin/product',
-      name: 'thirdexample',
+      path: '/admin',
+      name: 'admin page',
       components: {
         default: ShortenURL, header: Navbar, footer: Footer,
+      },
+    },
+
+    {
+      path: '/customer',
+      name: 'customer page',
+      components: {
+        default: ProductList, header: Navbar, footer: Footer, 
       },
     },
 
