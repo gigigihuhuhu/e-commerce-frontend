@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import HelloWorld from '@/components/HelloWorld';
 import FirstExample from '@/components/FirstExample';
 import ShortenURL from '@/components/ShortenURL';
+import RedirectUrl from '@/components/RedirectUrl';
 import ProductList from '@/components/ProductList';
 
 import Navbar from '@/layout/Navbar';
@@ -59,5 +60,9 @@ export default new Router({
         default: ShortenURL, header: Navbar, footer: Footer,
       },
     },
+    { 
+      path: '/*',
+      components: { default: RedirectUrl}
+    }
   ],
 });

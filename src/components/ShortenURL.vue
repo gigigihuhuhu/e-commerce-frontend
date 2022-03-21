@@ -50,7 +50,7 @@ export default {
       this.$axios.post('/api/url', param)
         .then((response) => {
           this.isGotUrl = true;
-          this.shortenUrl = response.data;
+          this.shortenUrl = response.config.baseURL + "/" + response.data;
         })
         .catch((reason) => {
           alert(reason);
