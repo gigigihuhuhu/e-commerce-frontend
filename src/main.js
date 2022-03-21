@@ -5,7 +5,13 @@ import axios from 'axios';
 import App from './App';
 import router from './router';
 
-axios.defaults.baseURL = 'http://localhost:8080';
+if (window.webpackHotUpdate) { // if it is in dev mode
+  axios.defaults.baseURL = 'http://localhost:8080';
+}
+else{
+  axios.defaults.baseURL = 'http://ec2-3-227-117-109.compute-1.amazonaws.com';
+}
+
 Vue.prototype.$axios = axios;
 
 Vue.config.productionTip = false;
