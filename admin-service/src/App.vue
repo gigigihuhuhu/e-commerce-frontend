@@ -1,30 +1,26 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <v-app>
+    <Navbar/>
+    <NavDrawer v-if="$route.name != 'Home'"/>
+    <v-main class="grey lighten-3">
+      <v-container fluid>
+        <router-view/>
+      </v-container>
+    </v-main>
+    <Footer/>
+  </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import Footer from './layout/Footer.vue'
+import Navbar from './layout/Navbar.vue'
+import NavDrawer from './layout/NavDrawer.vue'
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+export default {
+  name: 'App',
+  components: {Footer, Navbar, NavDrawer},
+  data(){
+    return {}
+  },
+};
+</script>
