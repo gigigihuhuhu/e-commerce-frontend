@@ -1,6 +1,7 @@
 <template>
   <v-footer
-      app>
+      app
+      inset>
     footer
   </v-footer>
 </template>

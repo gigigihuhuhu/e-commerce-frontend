@@ -2,7 +2,7 @@
   <v-app>
     <Navbar/>
     <NavDrawer v-if="$route.name != 'Home'"/>
-    <v-main class="grey lighten-3">
+    <v-main>
       <v-container fluid>
         <router-view/>
       </v-container>
