@@ -1,58 +1,26 @@
 <template>
   <v-app>
-    <v-app-bar
-        app
-        color="white"
-        flat
-    >
-      <v-avatar
-          :color="$vuetify.breakpoint.smAndDown ? 'grey darken-1' : 'transparent'"
-          size="32"
-      ></v-avatar>
-
-      <v-tabs
-          centered
-          class="ml-n9"
-          color="grey darken-1"
-      >
-        <v-tab
-            v-for="link in links"
-            :key="link"
-        >
-          {{ link }}
-        </v-tab>
-      </v-tabs>
-
-      <v-avatar
-          class="hidden-sm-and-down"
-          color="grey darken-1 shrink"
-          size="32"
-      ></v-avatar>
-    </v-app-bar>
-
-    <v-main>
-      <router-view/>
+    <Navbar/>
+    <NavDrawer v-if="$route.name != 'Home'"/>
+    <v-main class="grey lighten-3">
+      <v-container fluid>
+        <router-view/>
+      </v-container>
     </v-main>
-
-    <v-footer app>
-      <!-- -->
-    </v-footer>
+    <Footer/>
   </v-app>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
+<script>
+import Footer from './layout/Footer.vue'
+import Navbar from './layout/Navbar.vue'
+import NavDrawer from './layout/NavDrawer.vue'
 
-export default Vue.extend({
+export default {
   name: 'App',
-
-  data: () => ({
-    links: [
-      'Dashboard',
-      'Messages',
-      'Profile',
-      'Updates',
-    ],
-  }),
-});
+  components: {Footer, Navbar, NavDrawer},
+  data(){
+    return {}
+  },
+};
 </script>
