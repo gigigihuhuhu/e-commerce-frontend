@@ -20,77 +20,43 @@ const routes = [
     },
     {
         path: '/products',
-        name: 'ProductsCategory',
+        name: 'Products',
         component: Products,
+        icon: 'mdi-pizza',
         title: 'Products',
-        children:[
-            {
-                path: '/products',
-                name: 'Products',
-                component: Products,
-                icon: 'mdi-pizza',
-                title: '상품 목록',
-            },
-            {
-                path: '/products/registration',
-                name: 'ProductsRegistration',
-                component: ProductRegistration,
-                icon: 'mdi-archive-plus',
-                title: '상품 등록',
-            },
-        ]
+    },
+    {
+        path: '/products/registration',
+        name: 'ProductRegistration',
+        component: ProductRegistration,
+        icon: 'mdi-archive-plus',
+        title: '상품 등록',
     },
     {
         path: '/customers',
-        name: 'CustomersCategory',
+        name: 'Customers',
         component: Customers,
+        icon: 'mdi-account-details-outline',
         title: 'Customers',
-        children:[
-            {
-                path: '/customers',
-                name: 'Customers',
-                component: Customers,
-                icon: 'mdi-pizza',
-                title: '고객 목록',
-            },
-        ]
     },
     {
         path: '/stores',
-        name: 'StoresCategory',
+        name: 'Stores',
         component: Stores,
+        icon: 'mdi-storefront-outline',
         title: 'Stores',
-        children:[
-            {
-                path: '/stores',
-                name: 'Stores',
-                component: Stores,
-                icon: 'mdi-pizza',
-                title: '매장 목록',
-            },
-        ]
     },
     {
         path: '/orders',
-        name: 'OrdersCategory',
+        name: 'Orders',
         component: Orders,
+        icon: 'mdi-emoticon-tongue-outline',
         title: 'Orders',
-        children:[
-            {
-                path: '/orders',
-                name: 'Orders',
-                component: Orders,
-                icon: 'mdi-pizza',
-                title: '주문 목록',
-            },
-            {
-                path: '/orders/reviews',
-                name: 'Reviews',
-                component: Reviews,
-                icon: 'mdi-archive-plus',
-                title: '리뷰 목록',
-            },
-        ]
+    },
+    {
+        path: '/orders/reviews',
+        name: 'Reviews',
+        component: Reviews,
     },
 ]
 

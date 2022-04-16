@@ -18,11 +18,12 @@
           color="grey darken-1"
       >
         <v-tab
-            v-for="(route,index) in $router.options.routes"
+            v-for="(menu,index) in menus"
             :key="index"
-            :to="route.path"
+            :to="menu.path"
+            @click="$emit('change-menu',$event.target.text.trim())"
         >
-          {{ route.title }}
+          {{ menu.title }}
         </v-tab>
       </v-tabs>
 
@@ -36,10 +37,13 @@
 </template>
 
 <script>
+import {menus} from "./menu"
+
 export default {
   name: "NavbarDefault",
   data() {
     return {
+      menus:menus
     }
   },
 }

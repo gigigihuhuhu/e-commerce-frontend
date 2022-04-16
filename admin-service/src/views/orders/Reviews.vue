@@ -1,15 +1,12 @@
 <template>
-<div>
-  Reviews
-</div>
+  <div>Reviews</div>
 </template>
 
 <script>
 export default {
-  name: "ReviewsView"
-}
+  name: "ReviewsView",
+};
 </script>
 
 <style scoped>
-
 </style>

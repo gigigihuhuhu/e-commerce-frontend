@@ -1,7 +1,7 @@
 <template>
   <v-app>
-    <Navbar/>
-    <NavDrawer v-if="$route.name != 'Home'"/>
+    <Navbar @change-menu="updateSubmenus" />
+    <NavDrawer ref="sideNavBar" v-if="$route.name != 'Home'"/>
     <v-main>
       <v-container fluid>
         <router-view/>
@@ -21,6 +21,13 @@ export default {
   components: {Footer, Navbar, NavDrawer},
   data(){
     return {}
+  },
+  methods: {
+    updateSubmenus(menuName){
+      if(menuName !== 'Home'){
+        this.$refs.sideNavBar.updateMenus(menuName)
+      }
+    }
   },
 };
 </script>

@@ -1,14 +1,11 @@
 <template>
-  <v-navigation-drawer
-      app
-      clipped
-  >
-    <v-list dense>
+  <v-navigation-drawer app clipped>
+    <v-list :key="render" dense>
       <v-list-item
-          v-for="(child, index) in $router.options.routes.filter(x=>x.path==$router.currentRoute.path)[0].children"
-          :key="index"
-          link
-          :to="child.path"
+        v-for = "(child, index) in children"
+        :key="index"
+        link
+        :to="parentPath + child.path"
       >
         <v-list-item-icon>
           <v-icon>{{ child.icon }}</v-icon>
@@ -23,12 +20,32 @@
 </template>
 
 <script>
+import { menus } from "./menu";
+
 export default {
   name: "NavDrawer",
+  data() {
+    return {
+      render: 0,
+      menus: menus,
+      parentPath:"",
+      children:[]
+    };
+  },
 
-}
+  methods: {
+    updateMenus(menuName) {
+      this.menus.forEach((menu) => {
+        if(menu.name === menuName){
+          this.children = menu.children
+          this.parentPath = menu.path
+          return
+        }
+      });
+    },
+  },
+};
 </script>
 
 <style scoped>
-
 </style>
