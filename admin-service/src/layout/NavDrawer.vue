@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer app clipped>
+  <v-navigation-drawer app clipped hide-overlay>
     <v-list :key="render" dense>
       <v-list-item
         v-for = "(child, index) in children"

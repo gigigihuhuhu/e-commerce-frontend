@@ -26,7 +26,7 @@ const routes = [
         title: 'Products',
     },
     {
-        path: '/products/registration',
+        path: '/product/registration',
         name: 'ProductRegistration',
         component: ProductRegistration,
         icon: 'mdi-archive-plus',
@@ -54,7 +54,7 @@ const routes = [
         title: 'Orders',
     },
     {
-        path: '/orders/reviews',
+        path: '/reviews',
         name: 'Reviews',
         component: Reviews,
     },

@@ -1,53 +1,39 @@
 export const menus = [{
-    path: '/',
     name: 'Home',
     title: 'Home',
+    path: '/',
 },
 {
-    path: '/products',
     name: 'Products',
     title: 'Products',
     children: [{
-        path: '',
+        path: '/products',
         name: 'Products',
         icon: 'mdi-pizza',
         title: '상품 목록',
     },
     {
-        path: '/registration',
+        path: '/product/registration',
         name: 'ProductRegistration',
         icon: 'mdi-archive-plus',
         title: '상품 등록',
     },]
 },
 {
-    path: '/customers',
     name: 'Customers',
     title: 'Customers',
-    children: [{
-        path: '',
-        name: 'Customers',
-        icon: 'mdi-account-details-outline',
-        title: '고객 목록',
-    },]
+    path: '/customers',
 },
 {
-    path: '/stores',
     name: 'Stores',
     title: 'Stores',
-    children: [{
-        path: '',
-        name: 'Stores',
-        icon: 'mdi-storefront-outline',
-        title: '매장 목록',
-    },]
+    path: '/stores',
 },
 {
-    path: '/orders',
     name: 'Orders',
     title: 'Orders',
     children: [{
-        path: '',
+        path: '/orders',
         name: 'Orders',
         icon: 'mdi-emoticon-tongue-outline',
         title: '주문 목록',

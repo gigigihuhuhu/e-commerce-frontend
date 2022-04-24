@@ -1,7 +1,6 @@
 <template>
   <v-app>
-    <Navbar @change-menu="updateSubmenus" />
-    <NavDrawer ref="sideNavBar" v-if="$route.name != 'Home'"/>
+    <Navbar/>
     <v-main>
       <v-container fluid>
         <router-view/>
@@ -14,20 +13,12 @@
 <script>
 import Footer from './layout/Footer.vue'
 import Navbar from './layout/Navbar.vue'
-import NavDrawer from './layout/NavDrawer.vue'
 
 export default {
   name: 'App',
-  components: {Footer, Navbar, NavDrawer},
+  components: {Footer, Navbar},
   data(){
     return {}
-  },
-  methods: {
-    updateSubmenus(menuName){
-      if(menuName !== 'Home'){
-        this.$refs.sideNavBar.updateMenus(menuName)
-      }
-    }
   },
 };
 </script>
